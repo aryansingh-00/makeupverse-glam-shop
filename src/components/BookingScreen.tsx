@@ -148,7 +148,6 @@ const BookingScreen = () => {
               <SelectValue placeholder="Select your city" />
             </SelectTrigger>
             <SelectContent className="bg-white z-50">
-              <SelectItem value="">All Cities</SelectItem>
               {cities.map((city) => (
                 <SelectItem key={city} value={city}>
                   {city}

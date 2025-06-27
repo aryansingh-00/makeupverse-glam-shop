@@ -1,8 +1,12 @@
 
-import { User, Settings, Heart, ShoppingBag, BookOpen, Star, LogOut } from "lucide-react";
+import { User, Settings, Heart, ShoppingBag, BookOpen, Star, LogOut, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { useState } from "react";
 
 const ProfileScreen = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
   const menuItems = [
     { icon: ShoppingBag, label: "My Orders", count: 3 },
     { icon: Heart, label: "Wishlist", count: 12 },
@@ -42,6 +46,23 @@ const ProfileScreen = () => {
           <div className="makeup-card p-4 text-center">
             <div className="text-2xl font-bold text-pink-600 mb-1">4.8</div>
             <div className="text-sm text-gray-600">Rating</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Dark Mode Toggle */}
+      <div className="px-6 mt-6">
+        <div className="makeup-card p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <Moon size={20} className="text-pink-600" />
+              <span className="font-medium text-gray-800">Dark Mode</span>
+            </div>
+            <Switch
+              checked={darkMode}
+              onCheckedChange={setDarkMode}
+              className="data-[state=checked]:bg-pink-500"
+            />
           </div>
         </div>
       </div>
